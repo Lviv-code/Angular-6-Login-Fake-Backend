@@ -1,0 +1,36 @@
+<div class="wraper">
+  <form
+    (ngSubmit)="login()"
+    [formGroup]="form" >
+    <h2>Logine:</h2>
+    <mat-form-field>
+      <input
+        formControlName ="username"
+        matInput
+        placeholder="username">
+      <mat-error *ngIf="submitted && form.controls.username.invalid">Username is required !!</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        formControlName="password"
+        matInput
+        placeholder="Password">
+      <mat-error *ngIf="submitted && form.controls.password.invalid">Password is required !!</mat-error>
+    </mat-form-field>
+
+    <mat-card-actions>
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary">
+        Login
+      </button>
+      <button
+        [routerLink]="['/register']"
+        mat-stroked-button
+        color="primary">
+        Register
+      </button>
+    </mat-card-actions>
+  </form>
+</div>

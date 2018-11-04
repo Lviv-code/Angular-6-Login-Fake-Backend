@@ -1,0 +1,21 @@
+div {
+  width: 250px;
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
+}
+
+mat-card {
+  display: flex;
+  align-items: center;
+  background-color: #efefef;
+}
+
+mat-card {
+  margin-top: 10px;
+}
+
+mat-card-content {
+  width: 250px;
+  padding-left: 15px;
+}

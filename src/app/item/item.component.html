@@ -1,0 +1,18 @@
+<mat-card>
+  <div class="img" [style.background-image]="'url('+ img + ')'"></div>
+
+  <mat-card-content>
+    <h2>{{item.title}}</h2>
+    <p>{{item.description}}</p>
+    <p>Price: {{item.price}}грн.</p>
+  </mat-card-content>
+
+    <button
+      mat-icon-button
+      (click)="delete()">
+      <i class="material-icons">
+        clear
+      </i>
+    </button>
+
+</mat-card>
