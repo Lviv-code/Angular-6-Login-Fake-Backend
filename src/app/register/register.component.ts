@@ -34,6 +34,10 @@ export class RegisterComponent implements OnInit {
     });
   }
 
+  get f() {
+    return this.form.controls;
+  }
+
   registerUser() {
     if (this.form.invalid) {
       return;

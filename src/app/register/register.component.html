@@ -8,7 +8,7 @@
         formControlName ="username"
         matInput
         placeholder="username">
-      <mat-error *ngIf="form.controls.username.invalid">Username is required !!</mat-error>
+      <mat-error *ngIf="f.username.invalid">Username is required !!</mat-error>
     </mat-form-field>
       <p class="error" *ngIf="error">{{errorMessage}} !!</p>
     <mat-form-field>
@@ -16,7 +16,7 @@
         formControlName="password"
         matInput
         placeholder="Password">
-      <mat-error *ngIf="form.controls.password.invalid">Password is required !!</mat-error>
+      <mat-error *ngIf="f.password.invalid">Password is required !!</mat-error>
     </mat-form-field>
 
     <mat-card-actions>

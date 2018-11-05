@@ -8,14 +8,14 @@
         formControlName ="username"
         matInput
         placeholder="username">
-      <mat-error *ngIf="submitted && form.controls.username.invalid">Username is required !!</mat-error>
+      <mat-error *ngIf="f.username.invalid">Username is required !!</mat-error>
     </mat-form-field>
     <mat-form-field>
       <input
         formControlName="password"
         matInput
         placeholder="Password">
-      <mat-error *ngIf="submitted && form.controls.password.invalid">Password is required !!</mat-error>
+      <mat-error *ngIf="f.password.invalid">Password is required !!</mat-error>
     </mat-form-field>
 
     <mat-card-actions>

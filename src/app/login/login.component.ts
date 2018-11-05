@@ -12,8 +12,6 @@ import {AuthenticationService} from '../_services/authentication.service';
 })
 export class LoginComponent implements OnInit {
   user: User;
-  loading = false;
-  submitted = false;
   returnUrl: string;
   form: FormGroup;
 
@@ -30,7 +28,6 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
-
     this.form.valueChanges.subscribe(val => {
       this.user = val;
     });
@@ -38,13 +35,14 @@ export class LoginComponent implements OnInit {
     this.returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'] || '/';
   }
 
-  login() {
-    this.submitted = true;
+  get f() {
+    return this.form.controls;
+  }
 
+  login() {
     if (this.form.invalid) {
       return;
     }
-    this.loading = true;
     this.authenticationService.login(this.user.username, this.user.password)
       .pipe(first())
       .subscribe(
@@ -53,11 +51,8 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/items']);
         },
         error => {
-          this.loading = false;
+          console.log(error);
         }
       );
-
   }
-
-
 }
